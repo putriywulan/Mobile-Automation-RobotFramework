@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-05-28T16:02:52.335514" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="D:\Bootcamp\Mobile-Automation-RobotFramework\Suites\login.robot">
+<test id="s1-t1" name="User Should Be Able To Login Wait Wrong Password" line="71">
+<kw name="Open Flight Application" owner="base" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>udid=${UDID}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-28T16:02:52.513207" elapsed="9.674077"/>
+</kw>
+<status status="PASS" start="2024-05-28T16:02:52.513207" elapsed="9.674077"/>
+</kw>
+<kw name="Verify Home Screen Appears" owner="homePage">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-05-28T16:03:03.088407" level="INFO">criteria is com.example.myapplication:id/imageView4</msg>
+<arg>locator=com.example.myapplication:id/imageView4</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-05-28T16:03:02.188614" elapsed="0.899793"/>
+</kw>
+<status status="PASS" start="2024-05-28T16:03:02.188614" elapsed="0.899793"/>
+</kw>
+<kw name="Click Sign In Button On Home Screen" owner="homePage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-05-28T16:03:03.089421" level="INFO">Clicking element 'com.example.myapplication:id/login'.</msg>
+<msg time="2024-05-28T16:03:03.183430" level="INFO">criteria is com.example.myapplication:id/login</msg>
+<arg>locator=com.example.myapplication:id/login</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-05-28T16:03:03.089421" elapsed="0.094009"/>
+</kw>
+<status status="PASS" start="2024-05-28T16:03:03.089421" elapsed="0.094009"/>
+</kw>
+<kw name="Input Username" owner="loginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-28T16:03:04.723067" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.example.myapplication:id/username"]</msg>
+<arg>locator=${username_input}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-28T16:03:03.184431" elapsed="1.538636"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-05-28T16:03:04.724076" level="INFO">Typing text 'support@ngendigital.com' into text field '//android.widget.EditText[@resource-id="com.example.myapplication:id/username"]'</msg>
+<msg time="2024-05-28T16:03:04.806348" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.example.myapplication:id/username"]</msg>
+<arg>locator=${username_input}</arg>
+<arg>text=${username}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-05-28T16:03:04.723067" elapsed="0.083281"/>
+</kw>
+<arg>username=${VALID_USERNAME}</arg>
+<status status="PASS" start="2024-05-28T16:03:03.183430" elapsed="1.622918"/>
+</kw>
+<kw name="Input User Password" owner="loginPage">
+<kw name="Input Password" owner="AppiumLibrary">
+<msg time="2024-05-28T16:03:04.807349" level="INFO">Typing password into text field '//android.widget.EditText[@resource-id="com.example.myapplication:id/password"]'</msg>
+<msg time="2024-05-28T16:03:05.318952" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.example.myapplication:id/password"]</msg>
+<arg>locator=${password_input}</arg>
+<arg>text=${password}</arg>
+<doc>Types the given password into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-05-28T16:03:04.807349" elapsed="0.511603"/>
+</kw>
+<arg>password=${IVALID_PASSWORD}</arg>
+<status status="PASS" start="2024-05-28T16:03:04.806348" elapsed="0.512604"/>
+</kw>
+<kw name="Click Sign In Button On Login Screen" owner="loginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-05-28T16:03:05.321457" level="INFO">Clicking element 'com.example.myapplication:id/signIn'.</msg>
+<msg time="2024-05-28T16:03:05.884330" level="INFO">criteria is com.example.myapplication:id/signIn</msg>
+<arg>locator=com.example.myapplication:id/signIn</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-05-28T16:03:05.320455" elapsed="0.563875"/>
+</kw>
+<status status="PASS" start="2024-05-28T16:03:05.318952" elapsed="0.565378"/>
+</kw>
+<kw name="Verify Fail Login" owner="loginPage">
+<kw name="Page Should Contain Text" owner="AppiumLibrary">
+<msg time="2024-05-28T16:03:05.982792" level="INFO">Current page contains text '"Invalid username/password"'.</msg>
+<arg>text="Invalid username/password"</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<status status="PASS" start="2024-05-28T16:03:05.884330" elapsed="0.098462"/>
+</kw>
+<status status="PASS" start="2024-05-28T16:03:05.884330" elapsed="0.098462"/>
+</kw>
+<kw name="Close Flight Application" owner="base" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2024-05-28T16:03:05.982792" elapsed="0.270086"/>
+</kw>
+<status status="PASS" start="2024-05-28T16:03:05.982792" elapsed="0.271589"/>
+</kw>
+<tag>TC-007</tag>
+<status status="PASS" start="2024-05-28T16:02:52.513207" elapsed="13.741174"/>
+</test>
+<status status="PASS" start="2024-05-28T16:02:52.336560" elapsed="13.918985"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">TC-007</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
