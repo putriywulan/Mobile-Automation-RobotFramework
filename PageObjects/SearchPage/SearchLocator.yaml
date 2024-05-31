@@ -1,0 +1,2 @@
+flightnumber_input: //android.widget.EditText[@resource-id="com.example.myapplication:id/flight_number"]
+#
