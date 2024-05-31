@@ -4,7 +4,7 @@ Resource             ../base.robot
 Resource             ../HomePage/homePage.robot
 Variables            SearchLocator.yaml
 
-*** Keywords ***
+*** Keywords ****
 Verify Home Screen Appears after Login
     Wait Until Element Is Visible    locator=//android.widget.TextView[@resource-id="com.example.myapplication:id/textView"]
 Click Search Menu

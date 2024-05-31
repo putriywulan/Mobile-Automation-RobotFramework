@@ -15,7 +15,6 @@ ${VALID_PASSWORD}            abc123
 ${VALID_FLIGHT}              DA935
 
 *** Test Cases ***
-
 User Search Flight Invalid Flight Number
     Verify Home Screen Appears
     Click Sign In Button On Home Screen
